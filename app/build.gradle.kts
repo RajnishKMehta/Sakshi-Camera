@@ -14,7 +14,7 @@ plugins {
 
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(17))
+        languageVersion.set(JavaLanguageVersion.of(21))
     }
 }
 
@@ -99,6 +99,13 @@ dependencies {
     implementation(libs.bundles.camerax)
 
     implementation(libs.zxing.core)
+
+    // implementation(project(":sakshi-sdk"))
+    implementation("io.github.rajnishkmehta.sakshi:sakshi-sdk:1.0.0-beta.5")
+    implementation(libs.lifecycle.viewmodel.ktx)
+    implementation(libs.coroutines.android)
+    implementation(libs.fragment.ktx)
+    implementation(libs.lifecycle.runtime.ktx)
 
     androidTestImplementation(libs.androidx.test.core.ktx)
     androidTestImplementation(libs.androidx.test.ext.junit.ktx)
