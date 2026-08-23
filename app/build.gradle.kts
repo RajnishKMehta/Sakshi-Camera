@@ -1,12 +1,4 @@
-import java.io.FileInputStream
-import java.util.Properties
-
-val keystorePropertiesFile = rootProject.file("keystore.properties")
-val useKeystoreProperties = keystorePropertiesFile.canRead()
-val keystoreProperties = Properties()
-if (useKeystoreProperties) {
-    keystoreProperties.load(FileInputStream(keystorePropertiesFile))
-}
+import org.gradle.api.GradleException
 
 plugins {
     alias(libs.plugins.android.application)
@@ -19,25 +11,32 @@ java {
 }
 
 android {
-    if (useKeystoreProperties) {
-        signingConfigs {
-            create("release") {
-                storeFile = rootProject.file(keystoreProperties["storeFile"]!!)
-                storePassword = keystoreProperties["storePassword"] as String
-                keyAlias = keystoreProperties["keyAlias"] as String
-                keyPassword = keystoreProperties["keyPassword"] as String
-                enableV4Signing = true
+    signingConfigs {
+        create("release") {
+            val keystoreFile = System.getenv("KEYSTORE_FILE")
+            val keystorePassword = System.getenv("KEYSTORE_PASSWORD")
+            val keyAlias = System.getenv("KEY_ALIAS")
+            val keyPassword = System.getenv("KEY_PASSWORD")
+
+            if (
+                keystoreFile.isNullOrBlank() ||
+                keystorePassword.isNullOrBlank() ||
+                keyAlias.isNullOrBlank() ||
+                keyPassword.isNullOrBlank()
+            ) {
+                throw GradleException(
+                    "Release signing configuration is missing. " +
+                    "Set KEYSTORE_FILE, KEYSTORE_PASSWORD, KEY_ALIAS, and KEY_PASSWORD."
+                )
             }
 
-            create("play") {
-                storeFile = rootProject.file(keystoreProperties["storeFile"]!!)
-                storePassword = keystoreProperties["storePassword"] as String
-                keyAlias = keystoreProperties["uploadKeyAlias"] as String
-                keyPassword = keystoreProperties["uploadKeyPassword"] as String
-            }
+            storeFile = file(keystoreFile)
+            storePassword = keystorePassword
+            this.keyAlias = keyAlias
+            this.keyPassword = keyPassword
+            enableV4Signing = true
         }
     }
-
     compileSdk = 37
     buildToolsVersion = "37.0.0"
     ndkVersion = "29.0.14206865"
@@ -59,23 +58,13 @@ android {
             isShrinkResources = true
             isMinifyEnabled = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-            if (useKeystoreProperties) {
-                signingConfig = signingConfigs.getByName("release")
-            }
+            signingConfig = signingConfigs.getByName("release")
         }
 
         getByName("debug") {
             applicationIdSuffix = ".dev"
             resValue("string", "app_name", "Camera d")
             // isDebuggable = false
-        }
-
-        create("play") {
-            initWith(getByName("release"))
-            applicationIdSuffix = ".play"
-            if (useKeystoreProperties) {
-                signingConfig = signingConfigs.getByName("play")
-            }
         }
     }
 
