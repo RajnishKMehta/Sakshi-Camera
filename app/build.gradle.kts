@@ -49,7 +49,7 @@ android {
         minSdk = 29
         targetSdk = 37
         versionCode = 1
-        versionName = versionCode.toString()
+        versionName = versionCode.toString() + "-beta"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
