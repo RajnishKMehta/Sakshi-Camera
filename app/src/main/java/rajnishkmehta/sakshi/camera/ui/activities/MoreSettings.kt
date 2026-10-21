@@ -20,6 +20,7 @@ import androidx.core.view.OnApplyWindowInsetsListener
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import rajnishkmehta.sakshi.camera.CamConfig
+import rajnishkmehta.sakshi.camera.ui.Mp4WarningDialog
 import rajnishkmehta.sakshi.camera.ui.OptionsSelectionDialog
 import rajnishkmehta.sakshi.camera.CapturedItems
 import rajnishkmehta.sakshi.camera.NumInputFilter
@@ -28,6 +29,9 @@ import rajnishkmehta.sakshi.camera.databinding.MoreSettingsBinding
 import rajnishkmehta.sakshi.camera.util.storageLocationToUiString
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
+import android.content.pm.PackageManager
+import rajnishkmehta.sakshi.camera.debug.DebugLogsActivity
+import rajnishkmehta.sakshi.camera.vault.VaultSelectionDialog
 
 /**
  * Activity for displaying and managing extended camera settings (e.g., location tagging,
@@ -215,10 +219,15 @@ open class MoreSettings : AppCompatActivity(), TextView.OnEditorActionListener {
             if (which == 0) {
                 camConfig.videoFormat = CamConfig.SettingValues.Default.FORMAT_FMP4
                 vFValue.text = getString(R.string.fragmented_mp4)
-            } else {
-                camConfig.videoFormat = CamConfig.SettingValues.Default.FORMAT_MPEG4
-                vFValue.text = getString(R.string.mp4)
+            } else if (camConfig.videoFormat != CamConfig.SettingValues.Default.FORMAT_MPEG4) {
+                // Normal MP4 is not crash-safe and is only copied to Vault after recording, so ask first
+                Mp4WarningDialog().show(supportFragmentManager, Mp4WarningDialog.TAG)
             }
+        }
+
+        supportFragmentManager.setFragmentResultListener(Mp4WarningDialog.REQUEST_KEY, this) { _, _ ->
+            camConfig.videoFormat = CamConfig.SettingValues.Default.FORMAT_MPEG4
+            vFValue.text = getString(R.string.mp4)
         }
 
         vFSetting.setOnClickListener {
@@ -246,11 +255,11 @@ open class MoreSettings : AppCompatActivity(), TextView.OnEditorActionListener {
 
         val sLS = binding.storageLocationSetting
 
-        val debugLogsSetting = findViewById<android.view.View>(R.id.debug_logs_setting)
+        val debugLogsSetting = findViewById<View>(R.id.debug_logs_setting)
         if (debugLogsSetting != null) {
             debugLogsSetting.setOnClickListener {
                 try {
-                    val intent = android.content.Intent(this, Class.forName("rajnishkmehta.sakshi.camera.debug.DebugLogsActivity"))
+                    val intent = Intent(this, Class.forName("DebugLogsActivity"))
                     startActivity(intent)
                 } catch (e: Exception) {
                     e.printStackTrace()
@@ -259,9 +268,9 @@ open class MoreSettings : AppCompatActivity(), TextView.OnEditorActionListener {
         }
 
         binding.vaultPackageSetting.setOnClickListener {
-            val dialog = rajnishkmehta.sakshi.camera.vault.VaultSelectionDialog()
+            val dialog = VaultSelectionDialog()
             dialog.isMandatory = false
-            dialog.show(supportFragmentManager, rajnishkmehta.sakshi.camera.vault.VaultSelectionDialog.TAG)
+            dialog.show(supportFragmentManager, VaultSelectionDialog.TAG)
         }
 
         supportFragmentManager.setFragmentResultListener("vault_selection", this) { _, bundle ->
@@ -274,7 +283,7 @@ open class MoreSettings : AppCompatActivity(), TextView.OnEditorActionListener {
                 val isVaultAvailable = !camConfig.vaultPackage.isNullOrEmpty() && try {
             packageManager.getPackageInfo(camConfig.vaultPackage!!, 0)
             true
-        } catch (e: android.content.pm.PackageManager.NameNotFoundException) {
+        } catch (e: PackageManager.NameNotFoundException) {
             false
         }
 
