@@ -1,0 +1,50 @@
+<p><b>Sakshi Camera – Capture with Confidence.</b></p>
+
+<p>Sākṣī Camera is the camera application of the Sākṣī ecosystem, designed to capture photos and videos while working with Sākṣī Vault for local, protected media storage.</p>
+
+<p>Unlike a conventional camera workflow where captured media simply remains in the camera application's storage, Sākṣī Camera integrates with Sākṣī Vault to transfer captured media into Vault's private on-device storage.</p>
+
+<p><b>KEY FEATURES</b></p>
+
+<ul>
+<li><b>Photo Capture:</b> Capture photos using the camera interface and transfer them to Sākṣī Vault.</li>
+<li><b>Video Recording:</b> Record videos and synchronize their contents with Vault.</li>
+<li><b>Automatic Media Transfer:</b> Work with Vault to copy captured media without requiring you to manually move every file.</li>
+<li><b>Incremental Video Synchronization:</b> Support incremental copying of video data through the Sākṣī SDK.</li>
+<li><b>Private On-Device Storage:</b> Transferred media is stored in Sākṣī Vault's application-private storage.</li>
+<li><b>Local Communication:</b> Communicate with Vault through Sākṣī's local inter-process communication architecture.</li>
+</ul>
+
+<p><b>HOW SĀKṢĪ CAMERA WORKS</b></p>
+
+<ol>
+<li>Capture a photo or record a video using Sākṣī Camera.</li>
+<li>Sākṣī Camera communicates with Sākṣī Vault through the Sākṣī SDK.</li>
+<li>Vault processes the transfer and stores the media in its private storage.</li>
+<li>Vault provides a transfer-completion acknowledgment to the requesting application.</li>
+</ol>
+
+<p><b>BUILT AROUND PRIVACY</b></p>
+
+<p>Sākṣī follows a local-first approach. Its Camera-to-Vault workflow is designed around on-device communication and storage rather than requiring a cloud service for this transfer process.</p>
+
+<p>Your captured media is transferred to Sākṣī Vault's private application storage instead of being treated as an ordinary public-gallery file.</p>
+
+<p><b>PART OF THE SĀKṢĪ ECOSYSTEM</b></p>
+
+<p>Sākṣī Camera works alongside:</p>
+
+<ul>
+<li><b>Sākṣī Vault:</b> The on-device storage component responsible for receiving, processing and maintaining media records.</li>
+<li><b>Sākṣī SDK:</b> The communication layer that enables trusted client applications to interact with Vault.</li>
+<li><b>Sākṣī Portal:</b> Another companion application within the Sākṣī ecosystem.</li>
+</ul>
+
+<p>Each component has a distinct responsibility, working together through documented interfaces and defined communication workflows.</p>
+
+<p><b>YOUR MEDIA. YOUR DEVICE. YOUR CONTROL.</b></p>
+
+<p>Sākṣī Camera is built for users who want their camera workflow to be part of a privacy-focused, local-first media ecosystem.</p>
+
+<p>Learn more about Sākṣī at:<br/>
+https://sakshi-docs.gitbook.io</p>
