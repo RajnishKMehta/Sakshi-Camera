@@ -398,7 +398,11 @@ class VideoCapturer(private val mActivity: MainActivity) {
                             }
                         }
 
-                        if (!isExpectedTermination && vaultTransferMode == VideoVaultTransferMode.COPY_AFTER_RECORDING) {
+                        if (!isNoValidData &&
+                            event.error != VideoRecordEvent.Finalize.ERROR_ENCODING_FAILED &&
+                            event.error != VideoRecordEvent.Finalize.ERROR_RECORDER_ERROR &&
+                            vaultTransferMode == VideoVaultTransferMode.COPY_AFTER_RECORDING
+                        ) {
                             submitFinishedRecordingToVault(recordingCtx.uri)
                         }
                     }

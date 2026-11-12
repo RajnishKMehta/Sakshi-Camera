@@ -106,3 +106,26 @@ dependencies {
     androidTestImplementation(libs.androidx.test.rules)
     androidTestImplementation(libs.androidx.test.runner)
 }
+
+android {
+    sourceSets {
+        getByName("main") {
+            res.srcDir(layout.buildDirectory.dir("generated/res/about"))
+        }
+    }
+}
+
+val downloadDeveloperPhoto by tasks.registering(DownloadTask::class) {
+    url.set("https://github.com/RajnishKMehta/Sakshi-Docs/releases/download/1/dev_photo.webp")
+    outputFile.set(layout.buildDirectory.file("generated/res/about/drawable/dev_photo.webp"))
+}
+
+tasks.named("preBuild") {
+    dependsOn(downloadDeveloperPhoto)
+}
+
+android {
+    lint {
+        abortOnError = true
+    }
+}

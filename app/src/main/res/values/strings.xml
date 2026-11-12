@@ -4,15 +4,12 @@
     <string name="camera_permission_dialog_message">
         The app needs permission to access the camera to function. Please provide the required permission via Settings in order to use this app.
     </string>
-
     <string name="audio_permission_dialog_title">Audio permission required</string>
     <string name="audio_permission_dialog_message">The app needs permission to access the microphone to record a video that contains audio. Please provide the required permission via Settings in order to proceed with this configuration. If you do not require your video to contain audio, you could just disable it (and enable it back later in the settings).</string>
-
     <string name="location_permission_dialog_title">Location permission required</string>
     <string name="location_permission_dialog_message">
         The app needs location permission for geo-tagging. Please provide the required permission via Settings in order to use this app.
     </string>
-
     <string name="flip_camera">Flip Camera</string>
     <string name="loading_camera">Loading camera</string>
     <string name="flash_mode">Flash Mode</string>
@@ -67,7 +64,6 @@
     <string name="timer">Timer</string>
     <string name="cancel_timer">Cancel Timer</string>
     <string name="video_capture_label">Record Video</string>
-
     <string name="camera">CAMERA</string>
     <string name="video">VIDEO</string>
     <string name="portrait_mode">PORTRAIT</string>
@@ -87,25 +83,18 @@
     <string name="more_options">More Options</string>
     <string name="pdf_417">PDF 417</string>
     <string name="more_settings">More Settings</string>
-
     <string name="general">General</string>
-
     <string name="save_image_as_previewed">Save image as previewed</string>
     <string name="save_as_image_preview_desc">Save output image as visible on preview (fixes inversion in front camera)</string>
-
     <string name="save_video_as_previewed">Save video as previewed</string>
     <string name="save_as_video_preview_desc">Save output video as visible on preview (fixes inversion in front camera)</string>
-
     <string name="gyroscope_suggestions">Gyroscope Suggestions</string>
     <string name="gyroscope_setting_desc">Occasionally get visual suggestions for straight/well-angled images</string>
-
     <string name="camera_sounds">Camera Sounds</string>
     <string name="camera_sounds_desc">Shutter sound and other audio cues</string>
-
     <string name="storage">Storage</string>
     <string name="storage_location">Storage Location</string>
     <string name="revert_back_to_dcim">Revert back to DCIM</string>
-
     <string name="image_quality">Image Quality</string>
     <string name="image_quality_desc" formatted="false">Adjust the quality of an image captured by the app from 1% to 100%.</string>
     <string name="photo">Photo</string>
@@ -118,7 +107,6 @@
     <string name="mp4_standard">MP4 (Standard Compatibility)</string>
     <string name="degree_format">%d°</string>
     <string name="percent_symbol">%</string>
-
     <string name="location_is_disabled">Location is disabled</string>
     <string name="settings">Settings</string>
     <string name="enable">Enable</string>
@@ -128,9 +116,7 @@
     <string name="disable_audio">Disable Audio</string>
     <string name="copied_text_to_clipboard">Copied text to clipboard</string>
     <string name="share_text_via">Share text via</string>
-
     <string name="unable_to_obtain_file_details">Unable to obtain file details</string>
-
     <string name="no_editor_app_error">You may not have a proper app for editing this content</string>
     <string name="edit_not_allowed">Editing images in secure mode is not allowed.</string>
     <string name="sharing_not_allowed">Sharing images in secure mode is not allowed.</string>
@@ -145,16 +131,13 @@
     <string name="delete_description">"Do you really want to delete this file (%s)?"</string>
     <string name="cancel">Cancel</string>
     <string name="no_image">Please capture a photo/video before trying to view them.</string>
-
     <string name="empty_gallery">Captured photos/videos not found</string>
-
     <string name="bind_failure">Failed to open camera due to an OS or hardware issue. Try rebooting.</string>
     <!-- Shown after a camera-extension mode (e.g. Night) is applied but its vendor implementation
          fails to bind: the mode is disabled and the camera falls back to a normal mode. Unlike
          bind_failure this is a handled, mode-specific recovery, not an OS/hardware failure, so it
          does not suggest rebooting. -->
     <string name="extension_mode_unavailable">This mode is unavailable on this device.</string>
-
     <!-- Shown when the camera can't record at the video quality the settings currently ask for,
          so that the settings screen doesn't keep claiming a quality that isn't actually in effect.
          %1$s is a quality such as "2160p (UHD)". A dropped quality is described as "a different
@@ -193,7 +176,6 @@
     <string name="file_already_exists">File exists at %s</string>
     <string name="file_does_not_exist">File does not exist at %s</string>
     <string name="couldnt_exclude_qr_format">Couldn\'t exclude %s format. Please ensure at least one format is selected in manual mode.</string>
-
     <string name="capturing_image">Capturing Image…</string>
     <string name="image_captured_successfully">Image captured successfully</string>
     <string name="unable_to_capture_image">Unable to capture image</string>
@@ -208,7 +190,6 @@
     <string name="error_during_recording">A error has occurred finishing the current recording, error code: %d</string>
     <string name="unable_to_access_output_file">Unable to access output file</string>
     <string name="please_wait_for_image_to_get_captured_before_sharing">Please wait for the image to get captured before attempting to share via long tap</string>
-
     <string name="file_details">File Details</string>
     <string name="file_name_generic">File Name: </string>
     <string name="not_found_generic">Not Found</string>
@@ -218,33 +199,23 @@
     <string name="duration">Duration: </string>
     <string name="file_created_on">File Created On: </string>
     <string name="last_modified_on">Last Modified On: </string>
-
     <string name="inaccessible_image">Photo %s is inaccessible</string>
     <string name="inaccessible_video">Video %s is inaccessible</string>
-
     <string name="main_storage">Main storage</string>
-
     <string name="zsl_setting_title">Enable Zero Shutter Lag</string>
     <string name="zsl_setting_desc">Uses Zero Shutter Lag (ZSL) for faster image capture. Ignores wait for focus setting. Certain devices may have a buggy implementation for this.</string>
     <string name="audio_permission_failed_in_recording">Unable to request for audio permission in between a recording</string>
-
     <string name="tap_to_mute_audio">Tap to mute audio</string>
     <string name="tap_to_unmute_audio">Tap to unmute audio</string>
-
     <string name="video_audio_recording_muted">The video\'s audio recording has been muted</string>
     <string name="video_audio_recording_unmuted">The video\'s audio recording has been unmuted</string>
-
     <string name="highest_res_setting">Use highest photo resolution</string>
     <string name="highest_res_setting_desc">Enable using the highest supported resolution for images instead of the default. This can lead to very large images on certain devices.</string>
-
     <string name="wait_for_focus_lock">Wait for Focus Lock</string>
     <string name="invalid_photo_quality_value">Invalid value set for photo quality</string>
-
     <string name="vault_package">Vault Application</string>
     <string name="select_vault">Select Vault</string>
     <string name="vault_package_desc">Change the Vault app package for secure data storage</string>
-
-
     <string name="vault_not_found_title">Vault Unavailable</string>
     <string name="vault_not_found_desc">The configured Vault application is unavailable.</string>
     <string name="download_sakshi_vault">Download Official Vault</string>
@@ -256,4 +227,45 @@
     <string name="mp4_warning_title">Switch to normal MP4?</string>
     <string name="mp4_warning_message">Normal MP4 is not crash-safe. If the app closes or the phone turns off while recording, the video may be lost.\n\nNormal MP4 videos are not copied to Vault while recording is in progress. They are sent to Vault for copying after recording finishes.</string>
     <string name="video_deleted_while_recording">The recorded video is no longer available. It may have been deleted by another app while recording.</string>
+    <string name="navigate_back_to_settings">Return to settings</string>
+    <string name="about_app">About Sākṣī Camera</string>
+    <string name="about_developer">About the Developer</string>
+    <string name="developed_by">Developed by</string>
+    <string name="developer_name">Rajnish Kumar</string>
+    <string name="developer_bio">Hi, I\'m Rajnish Kumar, an intermediate student and independent developer. I enjoy learning new technologies and building useful projects like Sākṣī. In my workflow, I extensively use AI-assisted development tools to explore ideas, solve complex problems, and learn new concepts.</string>
+    <string name="app_description">Sākṣī Camera is the camera application of the open-source Sākṣī Android ecosystem. It is designed to capture media and work with Sākṣī Vault to preserve an independent local copy while recording.</string>
+    <string name="open_source">Open Source</string>
+    <string name="github_repository">GitHub Repository</string>
+    <string name="user_guide_title">User Guide</string>
+    <string name="user_guide_desc">Learn how to use Sākṣī Camera</string>
+    <string name="about_desc">About app and developer</string>
+    <string name="information">Information</string>
+    <string name="user_guide_url">https://sakshi-docs.gitbook.io/space/user-guide</string>
+    <string name="about_option">About</string>
+    <string name="github">GitHub</string>
+    <string name="x_twitter">X (Twitter)</string>
+    <string name="instagram">Instagram</string>
+    <string name="linkedin">LinkedIn</string>
+    <string name="gravatar">Gravatar</string>
+    <string name="gitlab">GitLab</string>
+    <string name="reddit">Reddit</string>
+    <string name="link_github">https://github.com/RajnishKMehta</string>
+    <string name="link_x">https://x.com/RajnishKMehta</string>
+    <string name="link_instagram">https://instagram.com/RajnishKMehta</string>
+    <string name="link_linkedin">https://www.linkedin.com/in/rajnishkmehta</string>
+    <string name="link_gravatar">https://gravatar.com/rajnishkmehta</string>
+    <string name="link_gitlab">https://gitlab.com/RajnishKMehta</string>
+    <string name="link_reddit">https://www.reddit.com/user/RajnishKMehta</string>
+    <string name="link_repo">https://github.com/RajnishKMehta/Sakshi-Camera</string>
+    <string name="developer_title">Student &amp; Independent Developer</string>
+    <string name="contact">Contact</string>
+    <string name="know_more">Know More</string>
+    <string name="link_email">mailto:RajnishKMehta+Sakshi@proton.me</string>
+    <string name="link_know_more">https://sakshi-docs.gitbook.io/space/about/about-the-developer</string>
+    <string name="donate">Donate</string>
+    <string name="donate_github">Sponsor on GitHub</string>
+    <string name="link_github_sponsors">https://github.com/sponsors/RajnishKMehta</string>
+    <string name="dc_dev_email">Developer Email</string>
+    <string name="email_app_not_found_fallback">No email app found. Email address copied to clipboard.</string>
+    <string name="email_app_not_found">No email app found and couldn\'t copy email address.</string>
 </resources>

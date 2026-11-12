@@ -32,7 +32,6 @@
         </intent>
         <package android:name="rajnishkmehta.sakshi.vault" />
     </queries>
-
     <application
         android:name=".App"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -218,6 +217,12 @@
             android:excludeFromRecents="true"
             tools:ignore="DiscouragedApi" />
 
+
+        <activity
+            android:name=".ui.activities.AboutActivity"
+            android:exported="false"
+            android:showWhenLocked="true"
+             />
     </application>
 
 </manifest>

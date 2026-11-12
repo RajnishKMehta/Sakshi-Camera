@@ -288,6 +288,21 @@ open class MoreSettings : AppCompatActivity(), TextView.OnEditorActionListener {
 
         binding.vaultPackageSubtitle.text = if (isVaultAvailable) camConfig.vaultPackage else getString(R.string.vault_not_found_title)
 
+        binding.aboutSetting.setOnClickListener {
+            startActivity(Intent(this, AboutActivity::class.java))
+        }
+
+        binding.userGuideSetting.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, android.net.Uri.parse(getString(R.string.user_guide_url)).normalizeScheme())
+            try {
+                startActivity(intent)
+            } catch (e: android.content.ActivityNotFoundException) {
+                android.widget.Toast.makeText(this, "No app available to open this link", android.widget.Toast.LENGTH_SHORT).show()
+            } catch (e: SecurityException) {
+                android.widget.Toast.makeText(this, "No app available to open this link", android.widget.Toast.LENGTH_SHORT).show()
+            }
+        }
+
         sLS.setOnClickListener {
             sLField.performClick()
         }
