@@ -16,6 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:navigationIcon="?attr/homeAsUpIndicator"
+            app:navigationContentDescription="@string/navigate_back_to_settings"
             app:title="@string/about_app" />
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -141,7 +142,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:gravity="center">
 
                 <TextView
