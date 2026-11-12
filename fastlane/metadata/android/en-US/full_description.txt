@@ -48,3 +48,7 @@
 
 <p>Learn more about Sākṣī at:<br/>
 https://sakshi-docs.gitbook.io</p>
+
+<p><b>PRIVACY POLICY</b></p>
+<p>Read our Privacy Policy:</p>
+<p>https://sakshi-docs.gitbook.io/space/security-privacy/privacy-policy</p>
