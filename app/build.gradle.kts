@@ -126,6 +126,6 @@ tasks.named("preBuild") {
 
 android {
     lint {
-        abortOnError = false
+        abortOnError = true
     }
 }
