@@ -28,7 +28,7 @@
 
 <p>Sākṣī follows a local-first approach. Its Camera-to-Vault workflow is designed around on-device communication and storage rather than requiring a cloud service for this transfer process.</p>
 
-<p>Your captured media is transferred to Sākṣī Vault's private application storage instead of being treated as an ordinary public-gallery file.</p>
+<p>Your captured media is copied to Sākṣī Vault's private application storage. Camera also saves the capture to the shared media library, so the original can remain visible in your gallery.</p>
 
 <p><b>PART OF THE SĀKṢĪ ECOSYSTEM</b></p>
 
