@@ -1861,12 +1861,12 @@ open class MainActivity : AppCompatActivity(),
         }
 
         val ctx = applicationContext
+        // View properties must be read on the Main thread before thumbnail work is dispatched.
+        val side = preview.layoutParams.width
 
         thumbnailLoaderExecutor.executeIfAlive {
             var bitmap: Bitmap? = null
             try {
-                val side = preview.layoutParams.width
-
                 if (item.type == ITEM_TYPE_VIDEO) {
                     val origBitmap = getVideoThumbnail(ctx, item.uri)
                     origBitmap?.let {
