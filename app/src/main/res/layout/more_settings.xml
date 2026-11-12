@@ -37,6 +37,121 @@
 
             <include layout="@layout/debug_settings_button" />
             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TextAppearance.Material3.LabelLarge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="12dp"
+                    android:layout_marginStart="78dp"
+                    android:text="@string/information" />
+
+                <LinearLayout
+                    android:id="@+id/about_setting"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:orientation="horizontal"
+                    android:paddingTop="8dp"
+                    android:paddingHorizontal="16dp"
+                    android:paddingBottom="10dp">
+
+                    <ImageView
+                        android:id="@+id/about_icon"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:importantForAccessibility="no"
+                        android:paddingStart="4dp"
+                        android:paddingEnd="8dp"
+                        android:src="@android:drawable/ic_dialog_info"
+                        app:tint="?attr/colorControlNormal" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="4dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/about_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:text="@string/about_option"
+                            android:textColor="?android:textColorPrimary"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/about_subtitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="10dp"
+                            android:text="@string/about_desc"
+                            android:textSize="14sp"
+                            tools:ignore="RtlSymmetry" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/user_guide_setting"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:orientation="horizontal"
+                    android:paddingTop="8dp"
+                    android:paddingHorizontal="16dp"
+                    android:paddingBottom="10dp">
+
+                    <ImageView
+                        android:id="@+id/user_guide_icon"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:importantForAccessibility="no"
+                        android:paddingStart="4dp"
+                        android:paddingEnd="8dp"
+                        android:src="@android:drawable/ic_menu_help"
+                        app:tint="?attr/colorControlNormal" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="4dp"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/user_guide_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:text="@string/user_guide_title"
+                            android:textColor="?android:textColorPrimary"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/user_guide_subtitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="10dp"
+                            android:text="@string/user_guide_desc"
+                            android:textSize="14sp"
+                            tools:ignore="RtlSymmetry" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/general_settings"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -784,6 +899,8 @@
                 </LinearLayout>
 
             </LinearLayout>
+
+
 
         </LinearLayout>
 
