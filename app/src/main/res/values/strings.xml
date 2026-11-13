@@ -263,7 +263,7 @@
     <string name="link_email">mailto:RajnishKMehta+Sakshi@proton.me</string>
     <string name="link_know_more">https://sakshi-docs.gitbook.io/space/about/about-the-developer</string>
     <string name="donate">Donate</string>
-    <string name="donate_github">Sponsor on GitHub</string>
+    <string name="donate_github">Donate on GitHub</string>
     <string name="link_github_sponsors">https://github.com/sponsors/RajnishKMehta</string>
     <string name="dc_dev_email">Developer Email</string>
     <string name="email_app_not_found_fallback">No email app found. Email address copied to clipboard.</string>
