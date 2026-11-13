@@ -144,13 +144,10 @@
                 android:gravity="center" />
 
             <!-- Responsive Developer Action Buttons -->
-            <com.google.android.flexbox.FlexboxLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                app:flexWrap="wrap"
-                app:justifyContent="center"
-                app:alignItems="center">
+                android:layout_marginTop="24dp">
 
                 <TextView
                     android:id="@+id/link_know_more"
@@ -160,8 +157,7 @@
                     android:backgroundTint="#004C6B"
                     android:textColor="#C6E7FF"
                     android:paddingHorizontal="16dp"
-                    android:paddingVertical="10dp"
-                    android:layout_margin="4dp" />
+                    android:paddingVertical="10dp" />
 
                 <TextView
                     android:id="@+id/link_email"
@@ -171,8 +167,7 @@
                     android:backgroundTint="#004C6B"
                     android:textColor="#C6E7FF"
                     android:paddingHorizontal="16dp"
-                    android:paddingVertical="10dp"
-                    android:layout_margin="4dp" />
+                    android:paddingVertical="10dp" />
 
                 <TextView
                     android:id="@+id/link_github_sponsors"
@@ -182,10 +177,25 @@
                     android:backgroundTint="#004C6B"
                     android:textColor="#C6E7FF"
                     android:paddingHorizontal="16dp"
-                    android:paddingVertical="10dp"
-                    android:layout_margin="4dp" />
+                    android:paddingVertical="10dp" />
 
-            </com.google.android.flexbox.FlexboxLayout>
+                <androidx.constraintlayout.helper.widget.Flow
+                    android:id="@+id/developer_action_flow"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:constraint_referenced_ids="link_know_more,link_email,link_github_sponsors"
+                    app:flow_wrapMode="chain"
+                    app:flow_horizontalStyle="packed"
+                    app:flow_firstHorizontalStyle="packed"
+                    app:flow_firstHorizontalBias="0.5"
+                    app:flow_horizontalGap="8dp"
+                    app:flow_verticalGap="8dp"
+                    app:flow_verticalAlign="center"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <View
                 android:layout_width="match_parent"
