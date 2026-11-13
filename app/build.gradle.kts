@@ -79,6 +79,11 @@ android {
     androidResources {
         localeFilters += listOf("en")
     }
+
+    dependenciesInfo {
+        includeInApk = false
+        includeInBundle = false
+    }
 }
 
 dependencies {
